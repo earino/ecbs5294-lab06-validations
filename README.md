@@ -66,8 +66,9 @@ why, before you change anything.
 
 ## What you must produce
 
-**Today the lab starts early.** The lecture gives its spare minutes to the lab, and they are spent on step 4, the
-domain family, which Homework 3 requires. `scripts/checks.py` ends with **supplied mechanics** — `one()`,
+**Today the lab starts about 15 minutes early.** The lecture runs about 30 of its 45 minutes, so you have about
+**48 minutes** before the neighbour, not 33. The timeline: steps 1–3 by **minute 22**; step 4, the domain family,
+**minutes 22 to 32**, for everyone (Homework 3 requires it); the note and `DIAGNOSIS.md` at **minute 32** (minute 37 at the latest). `scripts/checks.py` ends with **supplied mechanics** — `one()`,
 `quarantined()`, `fingerprint()`, `run_clean_and_report_again()` — so your minutes go to the checks, not to plumbing.
 
 1. **Name the wrong data** (`DIAGNOSIS.md`, part 3). For each of the three checks in `scripts/checks.py`, write one
@@ -88,7 +89,7 @@ domain family, which Homework 3 requires. `scripts/checks.py` ends with **suppli
 3. **Decide.** Either fix `clean.py` (keep every order), or fix the label (gold says what it counts). Both are
    accepted. The decision must be the same in three places: the count check's expectation, the report's label, and
    the note.
-4. **The domain family**, in the minutes the lecture gave back. Three rules, each from a census or from meaning:
+4. **The domain family**, minutes 22 to 32. Three rules, each from a census or from meaning:
    `order_status` is one of the values a census of the raw file finds; no item has a negative price; every purchase
    date is inside the data's window, September 2016 to October 2018. A row that breaks one is **quarantined**: write
    the rule into `scripts/clean.py`'s section A, with its reason. Then, in `checks.py`, one domain check per rule that
@@ -98,8 +99,13 @@ domain family, which Homework 3 requires. `scripts/checks.py` ends with **suppli
 5. **The note** (`NOTE.md`). Three to five sentences, for someone who runs the shop and does not read SQL: what the
    number is (which orders, which months, which currency), how many orders it leaves out and why, and one thing this
    data **cannot** answer — written as a claim about the data: "this cannot tell you X, because the data has no Y".
-6. `DIAGNOSIS.md`, all five parts, short. **Start the note and `DIAGNOSIS.md` at least ten minutes before the
-   neighbour**, finished with step 4 or not. Then the last ten minutes, below, and the Moodle checkpoint.
+6. `DIAGNOSIS.md`, all five parts, short. **Start the note and `DIAGNOSIS.md` at minute 32, and at minute 37 at the
+   latest** (ten minutes before the neighbour), finished with step 4 or not.
+
+**The milestone: by minute 22** you have the three families in `CHECKS` (the idempotency half of the count family
+can wait), and a run that refuses on your count check
+with a number of orders in its message. That is the lab's one idea, built. If you are not there by minute 22, raise
+your hand: staff come to you first. Then the last ten minutes, below, and the Moodle checkpoint.
 
 ## Rules
 
