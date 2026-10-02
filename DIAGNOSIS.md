@@ -9,8 +9,9 @@ description of it. Paste the evidence *before* you change anything — a fix era
 
 2. **What was the actual cause?** Not what you changed — why the old query produced that number.
 
-3. **What evidence showed that?** Paste the queries you ran and their output: the census, `DESCRIBE`, the row count
-   before and after, `COUNT(*)` against `COUNT(DISTINCT …)`, the NULL count — whatever showed you the cause.
+3. **What evidence showed that?** Paste the query and the lines of its output that show the cause — the two
+   numbers of a key test, the NULL count, the first ten rows of a census — never a whole table. If the evidence is
+   more than about ten lines, you are pasting the transcript, not the evidence.
 
 ```text
 
