@@ -39,7 +39,7 @@ pandas prints a `NULL` as `NaN` or `None`, neither of which is in the file: do n
 
 ```sql
 WHERE year = 2024 AND country = 'World'
-WHERE iso_code IS NOT NULL OR country = 'Kosovo'
+WHERE Description != 'Manual' OR Description IS NULL
 ```
 
 **A view: a saved query with a name.** Write the filter once, read from it everywhere. It is not a copy of the
