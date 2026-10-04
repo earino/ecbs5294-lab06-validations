@@ -46,10 +46,10 @@ WHERE Description != 'Manual' OR Description IS NULL
 data; it re-runs its query each time it is read.
 
 ```sql
-CREATE OR REPLACE VIEW countries AS
-SELECT * FROM 'data/raw/owid_co2.csv'
-WHERE iso_code IS NOT NULL;
--- then:  SELECT COUNT(*) FROM countries;
+CREATE OR REPLACE VIEW products AS
+SELECT * FROM 'data/raw/online_retail.parquet'
+WHERE StockCode NOT IN ('POST', 'DOT', 'C2', 'BANK CHARGES');
+-- then:  SELECT COUNT(*) FROM products;
 ```
 
 **One number into Python.** `.fetchone()` returns the first row of the result; `[0]` takes its first column.
@@ -62,7 +62,9 @@ world = con.sql("SELECT co2 FROM 'data/raw/owid_co2.csv' WHERE year = 2024 AND c
 
 **Aggregates** collapse many rows into one number. `COUNT(*)` counts rows; `COUNT(col)` counts the rows where
 `col` is not `NULL`; `COUNT(DISTINCT col)` counts its different values. `SUM`, `AVG`, `MIN`, `MAX` skip `NULL`.
-An average over a column with gaps is the average of the rows that have a value.
+An average over a column with gaps is the average of the rows that have a value. (`countries`, below, is the view
+you built in Lab 1.)
+
 
 ```sql
 SELECT COUNT(*) AS n_rows, COUNT(co2) AS n_co2, COUNT(DISTINCT country) AS n_countries,
